@@ -1,0 +1,24 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    //funktioner och kod som ska laddas tillsammans med sidan
+    function start(){
+        ball={x:0,y:0};
+        ball1={x:500, y:400};
+        ball2={x:1000, y:700};
+      
+    }
+    function update(){
+        clearScreen();
+        circle(ball.x,ball.y,50,"red"); 
+        ball.x++; ball.y++;
+
+        rectangle(ball1.x,ball1.y,40,100, "blue");
+        ball1.x--; ball1.y--;
+
+        ring(ball2.x,ball2.y, 50, 50, "yellow");
+        ball2.y++;
+      
+        
+
+  
+    }
+</script>

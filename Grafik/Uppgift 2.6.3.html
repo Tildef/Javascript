@@ -1,0 +1,15 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+    function start(){
+        if (confirm("Vill du se en triangel")) {
+        } else {
+            alert("Slipp då.");
+        }
+        updatePerSecond=50000;
+    }
+    function update() {
+        if(mouse.left) {circle(mouse.x,mouse.y,20, "black");}
+        if(mouse.right) {circle(mouse.x,mouse.y,20, "red");}
+    }
+
+</script>

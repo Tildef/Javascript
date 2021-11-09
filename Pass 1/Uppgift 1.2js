@@ -1,0 +1,6 @@
+let firstName= "Tilde";
+let lastName= "Fagerström";
+let age= "17";
+
+console.log("Hej! Jag heter " + firstName + " " + lastName + " och jag är " + age + " år gammal!");
+

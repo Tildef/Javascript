@@ -1,0 +1,28 @@
+
+<script>
+    function varukorgVarde(korg){
+        if(korg<500){
+            return 0;
+        }
+        else if(korg<1000){
+            return korg*0.05;
+        }
+        else if(korg<5000){
+            return korg*0.1;
+        }
+        else if(korg<10000){
+            return korg*0.2;
+        }
+    }
+       
+    let varukorg, rabatt, återståendeKostnad;
+
+    do {
+        varukorg = prompt("Vad är värdet på din varukorg?");
+        rabatt = varukorgVarde(varukorg);
+        återståendeKostnad =  varukorg - rabatt;
+        alert(`Din varukorg har värde på ${varukorg} € - ${rabatt} € rabatt och ${återståendeKostnad} € kvar.`); 
+    }while (confirm("Vill du beräkna en ny varukorg?"));
+    
+</script>
+    

@@ -1,0 +1,36 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    //funktioner och kod som ska laddas tillsammans med sidan
+    function start(){
+        /*x=40;
+
+        while(x<totalWidth){
+            circle(x,200,40,"orange");
+            x+=100;
+
+        }
+        */
+/*
+        for (let x = 100; x<=700; x+=100){
+            circle(x, 400, 40, "orange");
+        }
+         */ 
+
+        //jämt och udda, första = 1+1=2=j'mt
+        //alla svarta=jämna, och alla röda = udda
+        for(let i = 1; i<9; i++){
+            for(let j = 1; j<9; j++){
+                if((i+j)%2==0){ //kollar om d är jämt eller udda
+                    rectangle(i*100, j*100, 100, 100, "red"); 
+                }else {
+                    rectangle(i*100, j*100, 100, 100, "black");
+                }
+                
+            }
+        }
+            
+
+    }
+
+   
+
+</script>

@@ -1,0 +1,67 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    //funktioner och kod som ska laddas tillsammans med sidan
+    function start(){
+        //translate() flyttar på 0,0 i kordinatsystemet
+        //rotate() roterar kordinatsystemet
+        //scale() minskar eller ökar på skalningen på kordinatsystemet
+        //save() och restore() sparar kordinatsystemets inställningar respektive återställer 
+    save();
+     translate(0,800);
+     rectangle(0,0,2000,300,"green");
+
+    restore();
+    save();
+    translate(700,370);
+    rectangle(0,0,450,450, "blue");
+
+    restore();
+    triangle(650,370,925,100,1200,370, "Black");
+
+    rectangle(770, 620, 100, 200, "Brown");
+
+    ring(850, 725, 10, 10, "gray");
+
+    rectangle(950, 620, 100, 100, "cyan");
+
+    rectangle(790, 150, 50, 150, "grey");
+
+    rectangle(300, 600, 50, 300, "brown");
+
+    rectangle(1500, 600, 50, 300, "Brown");
+
+    circle(300,600,50,"green");
+    circle(350,600,60,"green");
+    circle(325,550,50,"green");
+
+    circle(1500,600,50,"green");
+    circle(1550,600,60,"green");
+    circle(1532,550,50,"green");
+
+    circle(1560,150,70,"LightCyan");
+    circle(1500,160,70,"LightCyan");
+    circle(1650,140,60,"LightCyan");
+    
+
+     
+    /*  circle(0,0,50,"blue");  
+      restore();
+      save();
+      translate(300,100);
+      rotate(30);
+      scale(0.5,0.5);
+      rectangle(0,0,200,100,"green");
+      save();
+      translate(500,300);
+      rotate(45);
+      scale(2);
+      triangle(500,500,300,500,600,700, "BlueViolet");
+      
+      */
+
+    }
+    
+    
+    
+    
+    
+    </script>

@@ -1,0 +1,73 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    //funktion för att skapa en spindel
+    function Spindel(startX, startY, xSpeed, ySpeed) {
+        this.x = startX;
+        this.y = startY;
+        this.dead=false;
+        //bestämmer spindlarnas hastighet och hur spindeln kan röra på sig (riktning) och åt olika håll om värdet är positivt eller negativt för längden av skärmen (vänster eller högra sidan av skärmen).
+        if(random(2)==0){
+           this.xSpeed = xSpeed; 
+        }else{
+            this.xSpeed = -xSpeed; 
+        }
+        //bestämmer spindlarnas hastighet och hur spindeln kan röra på sig (riktning)och åt olika håll om värdet är positivt eller negativt för höjden av skärmen (uppe eller nedre sidan av skärmen)
+        if(random(2)==0){
+            this.ySpeed = ySpeed; 
+        }else{
+            this.ySpeed = -ySpeed; 
+        }
+        
+        //uppdaterar vart spindlarna rör sig 
+        this.update = function(){
+            this.x += this.xSpeed;
+            this.y += this.ySpeed;
+
+        //skapar en spindel
+            save();
+            translate(this.x, this.y);
+            circle(0, 100, 50, "black");
+            rotate(45);
+            rectangle(70, 110, 10, 65, "black");
+            rectangle(50, 110, 10, 65, "black");
+            rotate(30);
+            rectangle(80, 70, 10, 65, "black");
+            rotate(35);
+            rectangle(90, 10, 10, 65, "black");
+            rotate(-40);
+            rectangle(80,-80, 10, 65, "black");
+            rectangle(100, -80, 10, 65, "black");
+            rotate(-150);
+            rectangle(-110, 60, 10, 65, "black");
+            rotate(-160);
+            rectangle(100, -150, 10, 65, "black");
+            circle(90, -20, 10, "red");
+            circle(60, -70, 10, "red");
+         
+            restore();
+       
+        }
+    }
+
+    
+    //skapar en array med alla spindlar
+    function start(){
+      spindlar = [];
+    }
+    //spindlarnas uppdaterings funktion
+    function update(){
+        //En if sats som pushar/spawnar in nya spindlar (100st) vid olika tidpunkter och att den spawars i mitten av skärmen
+        if (random(100)==0){
+            spindlar.push(new Spindel(totalWidth/2,totalHeight/2,(3*(1+random(300))/300),3*(1+random(300))/300));
+        }
+            clearScreen();
+            //uppdaterar spindlarna och if satser så att spindlarna ska sluta uppdateras när dem når skärmens kanter
+            for(let i=0; i<spindlar.length; i++){
+                if(spindlar[i].x<1||spindlar[i].x>totalWidth||spindlar[i].y<1||spindlar[i].y>totalHeight-100){
+                spindlar[i].dead=true;
+                }if(!spindlar[i].dead){
+                    spindlar[i].update();
+                } 
+            } 
+    }
+  
+</script>

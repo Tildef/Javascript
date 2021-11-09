@@ -1,0 +1,42 @@
+<script src="http://spelprogrammering.nu/simple.js">
+
+
+  
+function start(){
+    //Här ritar jag upp själva spelytan och hindrena och målet.
+    line(300, 100, totalWidth-300, 100, 20, "blue");
+    line(300, 100, 300, 300, 20, "blue");
+    line(300, 500, 300, 700, 20, "blue");
+    line(300, 700, totalWidth-300, 700, 20, "blue");
+    line(totalWidth-300, 100, totalWidth-300, 300, 20, "blue");
+    line(totalWidth-300, 500, totalWidth-300, 700, 20, "blue"); 
+    rectangle(310, 110, 1300, 580, "green");   
+    rectangle(1650, 300, 200, 200, "red");
+    rectangle(700, 100, 100, 350, "blue");
+    rectangle(1100, 300, 100, 400, "blue");
+    
+
+}
+
+function update(){
+    //Här fixar jag så att om musen rör grönt så ska den försvinna och om den inte rör grönt så syns den
+    if (getPixel(mouse.x, mouse.y).green!=0){
+        hideMouse();
+    } else {
+        showMouse();
+    }
+    //Här fixar jag så att om musen rör röd färg så har man kommit i mål
+    if (getPixel(mouse.x, mouse.y).red!=0){
+        alert("Mål!");
+    }
+    //Här fixar jag så att om musen rör blå färg så förlorar man
+    if (getPixel(mouse.x, mouse.y).blue!=0){
+        alert("You lost");
+        showMouse();
+    }
+        
+
+  
+}  
+
+</script>

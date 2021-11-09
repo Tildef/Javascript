@@ -1,0 +1,25 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    //funktioner och kod som ska laddas tillsammans med sidan
+    function start(){
+        cat={x:0,y:0,speed:10};
+        y=25;
+       hideMouse();
+        
+    }
+    function update(){
+        clearScreen();
+        circle(cat.x,cat.y,50, "orange");
+       if(keyboard.left) {cat.x-=cat.speed;}
+       if(keyboard.right) {cat.x+=cat.speed;}
+       if(keyboard.down) {cat.y+=cat.speed;}
+       if(keyboard.up) {cat.y-=cat.speed;}
+
+      circle(mouse.x, mouse.y, 20, "brown");
+        
+      if(distance(cat, mouse)<40) {
+          showMouse();
+          stopUpdate();
+      }
+
+    }
+</script>

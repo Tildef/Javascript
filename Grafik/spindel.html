@@ -1,0 +1,40 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    function Zombie(startX, startY, xSpeed) {
+        this.x = startX;
+        this.y = startY;
+        this.xSpeed = xSpeed;
+
+        this.update = function(){
+            this.x += this.xSpeed;
+
+                save();
+                translate(this.x, this.y);
+                circle(0, 100, 50, "black");
+                rotate(45);
+                rectangle(70, 110, 10, 65, "blue");
+                rectangle(50, 110, 10, 65, "red");
+                rotate(30);
+                rectangle(80, 70, 10, 65, "green");
+                rotate(35);
+                rectangle(90, 10, 10, 65, "black");
+                rotate(-45);
+                rectangle(-75, 110, 10, 65, "yellow");
+                
+                
+                
+            /* rotate(-45);
+                rectangle(-75, 110, 10, 65, "black");
+                rectangle(-55, 100, 10, 65, "black");
+                rotate(-30);
+                rectangle(-80, 70, 10, 65, "black");
+                rotate(-35);
+                rectangle(-90, 10, 10, 65, "black");
+                circle(-70, 10, 10, "red");
+                circle(-50, -50, 10, "red");
+            */
+        }
+    }
+    
+
+  
+</script>

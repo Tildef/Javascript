@@ -1,0 +1,87 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    function Zombie(startX, startY, xSpeed) {
+        this.x = startX;
+        this.y = startY;
+        this.xSpeed = xSpeed;
+
+        this.update = function(){
+            this.x += this.xSpeed;
+
+            save();
+            translate(this.x, this.y);
+            circle(0, 100, 50, "black");
+            rotate(45);
+            rectangle(70, 110, 10, 65, "black");
+            rectangle(50, 110, 10, 65, "black");
+            rotate(30);
+            rectangle(80, 70, 10, 65, "black");
+            rotate(35);
+            rectangle(90, 10, 10, 65, "black");
+            rotate(-40);
+            rectangle(80,-80, 10, 65, "black");
+            rectangle(100, -80, 10, 65, "black");
+            rotate(-150);
+            rectangle(-110, 60, 10, 65, "black");
+            rotate(-160);
+            rectangle(100, -150, 10, 65, "black");
+            circle(90, -20, 10, "red");
+            circle(60, -70, 10, "red");
+
+            //rectangle(3, 95, 23, 65, "grey");
+           //circle(15, 80, 20, "lightgreen");
+           // circle(0, 80, 3, "red");
+           // rectangle(-35, 100, 30, 14, "lightgreen");
+            //rectangle(-20, 100, 30, 14, "grey");
+            restore();
+        }
+
+        /*save();
+            translate(this.x,this.y);
+            circle(0, 100, 50, "black");
+            rotate(45);
+            rectangle(70, 110, 10, 65, "black");
+            rectangle(50, 110, 10, 65, "black");
+            rotate(30);
+            rectangle(80, 70, 10, 65, "black");
+            rotate(35);
+            rectangle(90, 10, 10, 65, "black");
+            
+            restore();
+            translate(this.x, this.y);
+            rotate(-45);
+            rectangle(-75, 110, 10, 65, "black");
+            rectangle(-55, 100, 10, 65, "black");
+            rotate(-30);
+            rectangle(-80, 70, 10, 65, "black");
+            rotate(-35);
+            rectangle(-90, 10, 10, 65, "black");
+            circle(-70, 10, 10, "red");
+            circle(-50, -50, 10, "red");
+         
+            restore();
+            */
+    }
+    
+    function start(){
+      zombies = [];
+
+      for(let i=0; i<1; i++){
+          //pusha i nya zombisar i array och slumpa fram deras position och hastighet på skärmen
+          zombies[i]= new Zombie((totalWidth/2),random(totalHeight),random(-5));
+      }
+      /*zombies[0] = new Zombie(600,200,-1);
+      zombies[1] = new Zombie(600,400,-2);
+      zombies[2] = new Zombie(600,600,-1);
+      zombies[0].update();
+*/
+    }
+
+    function update(){
+        clearScreen();
+        for(let i=0; i<zombies.length; i++){
+            zombies[i].update();
+        }
+        
+
+    }
+</script>
